@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_da1ac2681cf8cbab0bfe836e8bc1dfec {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_da1ac2681cf8cbab0bfe836e8bc1dfec" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_da1ac2681cf8cbab0bfe836e8bc1dfec = L.map(
+                "map_da1ac2681cf8cbab0bfe836e8bc1dfec",
+                {
+                    center: [37.75346818181818, -122.26701363636363],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bec1ff3230ff0e9db6eab581c88c47d3 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_bec1ff3230ff0e9db6eab581c88c47d3.addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+            var poly_line_bc85554aa65699968d6ad22447b6b42a = L.polyline(
+                [[37.7017, -121.8992], [37.6997, -121.928], [37.6907, -122.0758], [37.6693, -122.087], [37.6969, -122.1264], [37.7219, -122.1608], [37.7537, -122.1974], [37.7748, -122.2242], [37.7975, -122.2654], [37.8037, -122.2716], [37.8077, -122.2688], [37.8292, -122.267], [37.8049, -122.2951], [37.7931, -122.3964], [37.7894, -122.4014], [37.7844, -122.4079], [37.7795, -122.4136], [37.7651, -122.4196], [37.7523, -122.4184], [37.7331, -122.4338], [37.7216, -122.4475], [37.7061, -122.469]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+            var marker_7be83edac9e91ef670abcfa6a15c57ba = L.marker(
+                [37.7017, -121.8992],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_20b25bad165a27758cf8bcf8f2037ba6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3823aa8214defb49f2d1f0e6d4a7716d = $(`<div id="html_3823aa8214defb49f2d1f0e6d4a7716d" style="width: 100.0%; height: 100.0%;">Dublin/Pleasanton</div>`)[0];
+                popup_20b25bad165a27758cf8bcf8f2037ba6.setContent(html_3823aa8214defb49f2d1f0e6d4a7716d);
+            
+        
+
+        marker_7be83edac9e91ef670abcfa6a15c57ba.bindPopup(popup_20b25bad165a27758cf8bcf8f2037ba6)
+        ;
+
+        
+    
+    
+            marker_7be83edac9e91ef670abcfa6a15c57ba.bindTooltip(
+                `<div>
+                     Dublin/Pleasanton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f8698cb251ee11e6b99cf1c44954f916 = L.marker(
+                [37.6997, -121.928],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_8e222950d74446cec57eadc7d898bc20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b00f872d84a851fc0447218dcd64c63 = $(`<div id="html_0b00f872d84a851fc0447218dcd64c63" style="width: 100.0%; height: 100.0%;">West Dublin</div>`)[0];
+                popup_8e222950d74446cec57eadc7d898bc20.setContent(html_0b00f872d84a851fc0447218dcd64c63);
+            
+        
+
+        marker_f8698cb251ee11e6b99cf1c44954f916.bindPopup(popup_8e222950d74446cec57eadc7d898bc20)
+        ;
+
+        
+    
+    
+            marker_f8698cb251ee11e6b99cf1c44954f916.bindTooltip(
+                `<div>
+                     West Dublin
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fbfa59751a3f5add01ed60983601c600 = L.marker(
+                [37.6907, -122.0758],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_42360c41c76b9c19dc9b9bcc37966f90 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5658c7078dd754cf47cd926a885b03e4 = $(`<div id="html_5658c7078dd754cf47cd926a885b03e4" style="width: 100.0%; height: 100.0%;">Castro Valley</div>`)[0];
+                popup_42360c41c76b9c19dc9b9bcc37966f90.setContent(html_5658c7078dd754cf47cd926a885b03e4);
+            
+        
+
+        marker_fbfa59751a3f5add01ed60983601c600.bindPopup(popup_42360c41c76b9c19dc9b9bcc37966f90)
+        ;
+
+        
+    
+    
+            marker_fbfa59751a3f5add01ed60983601c600.bindTooltip(
+                `<div>
+                     Castro Valley
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3024da83407dd87dae5ef95ac9eb9d06 = L.marker(
+                [37.6693, -122.087],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_712ce0ec8994c0b5d3ac5bbda29b628a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6afbeb216670e99da466384f443123a5 = $(`<div id="html_6afbeb216670e99da466384f443123a5" style="width: 100.0%; height: 100.0%;">Hayward</div>`)[0];
+                popup_712ce0ec8994c0b5d3ac5bbda29b628a.setContent(html_6afbeb216670e99da466384f443123a5);
+            
+        
+
+        marker_3024da83407dd87dae5ef95ac9eb9d06.bindPopup(popup_712ce0ec8994c0b5d3ac5bbda29b628a)
+        ;
+
+        
+    
+    
+            marker_3024da83407dd87dae5ef95ac9eb9d06.bindTooltip(
+                `<div>
+                     Hayward
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_63259b158b03681ea67217898b480e15 = L.marker(
+                [37.6969, -122.1264],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_8f3611122f1e99b7c285acd17c6a321c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_568da53cdb5aad3be6060dfae89e95fb = $(`<div id="html_568da53cdb5aad3be6060dfae89e95fb" style="width: 100.0%; height: 100.0%;">Bay Fair</div>`)[0];
+                popup_8f3611122f1e99b7c285acd17c6a321c.setContent(html_568da53cdb5aad3be6060dfae89e95fb);
+            
+        
+
+        marker_63259b158b03681ea67217898b480e15.bindPopup(popup_8f3611122f1e99b7c285acd17c6a321c)
+        ;
+
+        
+    
+    
+            marker_63259b158b03681ea67217898b480e15.bindTooltip(
+                `<div>
+                     Bay Fair
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_74a8b6461c07914581cb0070b38b5397 = L.marker(
+                [37.7219, -122.1608],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_83710281083383107deacf0610ea3f6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10c9ff84aceb95f030f16e39011cef48 = $(`<div id="html_10c9ff84aceb95f030f16e39011cef48" style="width: 100.0%; height: 100.0%;">San Leandro</div>`)[0];
+                popup_83710281083383107deacf0610ea3f6d.setContent(html_10c9ff84aceb95f030f16e39011cef48);
+            
+        
+
+        marker_74a8b6461c07914581cb0070b38b5397.bindPopup(popup_83710281083383107deacf0610ea3f6d)
+        ;
+
+        
+    
+    
+            marker_74a8b6461c07914581cb0070b38b5397.bindTooltip(
+                `<div>
+                     San Leandro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3a956fda41a830e69bedc31b376d51da = L.marker(
+                [37.7537, -122.1974],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_92507c5ed7a5d14c42e4fcf4ecc30d40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b69a705ef5e23a7b5c0cc157c890a4a = $(`<div id="html_7b69a705ef5e23a7b5c0cc157c890a4a" style="width: 100.0%; height: 100.0%;">Coliseum</div>`)[0];
+                popup_92507c5ed7a5d14c42e4fcf4ecc30d40.setContent(html_7b69a705ef5e23a7b5c0cc157c890a4a);
+            
+        
+
+        marker_3a956fda41a830e69bedc31b376d51da.bindPopup(popup_92507c5ed7a5d14c42e4fcf4ecc30d40)
+        ;
+
+        
+    
+    
+            marker_3a956fda41a830e69bedc31b376d51da.bindTooltip(
+                `<div>
+                     Coliseum
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5c4877c62a7f24fc6bde77bf4471525f = L.marker(
+                [37.7748, -122.2242],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_8e71e90bc384eaf89aeb904d1d715d5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d9b05ef4ecbfc98827e48d6f3747bdc = $(`<div id="html_7d9b05ef4ecbfc98827e48d6f3747bdc" style="width: 100.0%; height: 100.0%;">Fruitvale</div>`)[0];
+                popup_8e71e90bc384eaf89aeb904d1d715d5d.setContent(html_7d9b05ef4ecbfc98827e48d6f3747bdc);
+            
+        
+
+        marker_5c4877c62a7f24fc6bde77bf4471525f.bindPopup(popup_8e71e90bc384eaf89aeb904d1d715d5d)
+        ;
+
+        
+    
+    
+            marker_5c4877c62a7f24fc6bde77bf4471525f.bindTooltip(
+                `<div>
+                     Fruitvale
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_37c9e31402412bc36c5432c478dc46c3 = L.marker(
+                [37.7975, -122.2654],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_ce00b8bd66f8e529b4e0d73e51144aa0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f5111666e4cc6c1244a0a9db63e35667 = $(`<div id="html_f5111666e4cc6c1244a0a9db63e35667" style="width: 100.0%; height: 100.0%;">Lake Merritt</div>`)[0];
+                popup_ce00b8bd66f8e529b4e0d73e51144aa0.setContent(html_f5111666e4cc6c1244a0a9db63e35667);
+            
+        
+
+        marker_37c9e31402412bc36c5432c478dc46c3.bindPopup(popup_ce00b8bd66f8e529b4e0d73e51144aa0)
+        ;
+
+        
+    
+    
+            marker_37c9e31402412bc36c5432c478dc46c3.bindTooltip(
+                `<div>
+                     Lake Merritt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_bd1961c39ad0556f889eb025d6b8b3b6 = L.marker(
+                [37.8037, -122.2716],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_94813f01df4b05891554c8febcc5fda5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aaa0c3ed3b3f1d102e47b65540482fdb = $(`<div id="html_aaa0c3ed3b3f1d102e47b65540482fdb" style="width: 100.0%; height: 100.0%;">12th St Oakland</div>`)[0];
+                popup_94813f01df4b05891554c8febcc5fda5.setContent(html_aaa0c3ed3b3f1d102e47b65540482fdb);
+            
+        
+
+        marker_bd1961c39ad0556f889eb025d6b8b3b6.bindPopup(popup_94813f01df4b05891554c8febcc5fda5)
+        ;
+
+        
+    
+    
+            marker_bd1961c39ad0556f889eb025d6b8b3b6.bindTooltip(
+                `<div>
+                     12th St Oakland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1f08be864c93e645f177748a3e3806f3 = L.marker(
+                [37.8077, -122.2688],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_2e242d0553dc595506babd88900b53ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a3c76e21589f1e9b3c7d015f3fdc7ba = $(`<div id="html_1a3c76e21589f1e9b3c7d015f3fdc7ba" style="width: 100.0%; height: 100.0%;">19th St Oakland</div>`)[0];
+                popup_2e242d0553dc595506babd88900b53ee.setContent(html_1a3c76e21589f1e9b3c7d015f3fdc7ba);
+            
+        
+
+        marker_1f08be864c93e645f177748a3e3806f3.bindPopup(popup_2e242d0553dc595506babd88900b53ee)
+        ;
+
+        
+    
+    
+            marker_1f08be864c93e645f177748a3e3806f3.bindTooltip(
+                `<div>
+                     19th St Oakland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1833912db0d2121d49fb99cc4ce0c9d8 = L.marker(
+                [37.8292, -122.267],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_52029563fae81d59d7f3227ac9c9ce75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26c20d849920a4ea6b6fcec2cc84d504 = $(`<div id="html_26c20d849920a4ea6b6fcec2cc84d504" style="width: 100.0%; height: 100.0%;">MacArthur</div>`)[0];
+                popup_52029563fae81d59d7f3227ac9c9ce75.setContent(html_26c20d849920a4ea6b6fcec2cc84d504);
+            
+        
+
+        marker_1833912db0d2121d49fb99cc4ce0c9d8.bindPopup(popup_52029563fae81d59d7f3227ac9c9ce75)
+        ;
+
+        
+    
+    
+            marker_1833912db0d2121d49fb99cc4ce0c9d8.bindTooltip(
+                `<div>
+                     MacArthur
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2b82418239241c7f054cf407cde60b37 = L.marker(
+                [37.8049, -122.2951],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_47ba7a1437230b016eb0fa451505bac7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_420c63cbefcef5ae35af7bbdc773d865 = $(`<div id="html_420c63cbefcef5ae35af7bbdc773d865" style="width: 100.0%; height: 100.0%;">West Oakland</div>`)[0];
+                popup_47ba7a1437230b016eb0fa451505bac7.setContent(html_420c63cbefcef5ae35af7bbdc773d865);
+            
+        
+
+        marker_2b82418239241c7f054cf407cde60b37.bindPopup(popup_47ba7a1437230b016eb0fa451505bac7)
+        ;
+
+        
+    
+    
+            marker_2b82418239241c7f054cf407cde60b37.bindTooltip(
+                `<div>
+                     West Oakland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a05d95dacd0b6c2cbdccac34f2f523aa = L.marker(
+                [37.7931, -122.3964],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_49aaf21e605f2a747c4b78fa0ec13639 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_990a1d8db54c13a7882bffbc53c5d937 = $(`<div id="html_990a1d8db54c13a7882bffbc53c5d937" style="width: 100.0%; height: 100.0%;">Embarcadero</div>`)[0];
+                popup_49aaf21e605f2a747c4b78fa0ec13639.setContent(html_990a1d8db54c13a7882bffbc53c5d937);
+            
+        
+
+        marker_a05d95dacd0b6c2cbdccac34f2f523aa.bindPopup(popup_49aaf21e605f2a747c4b78fa0ec13639)
+        ;
+
+        
+    
+    
+            marker_a05d95dacd0b6c2cbdccac34f2f523aa.bindTooltip(
+                `<div>
+                     Embarcadero
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_25277bb0b4d099bfba8fa9d7f186b3a3 = L.marker(
+                [37.7894, -122.4014],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_f7ac1aa1805da0d9d89408d8607fd439 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bde80dd604b984da059df9efbd1ba700 = $(`<div id="html_bde80dd604b984da059df9efbd1ba700" style="width: 100.0%; height: 100.0%;">Montgomery</div>`)[0];
+                popup_f7ac1aa1805da0d9d89408d8607fd439.setContent(html_bde80dd604b984da059df9efbd1ba700);
+            
+        
+
+        marker_25277bb0b4d099bfba8fa9d7f186b3a3.bindPopup(popup_f7ac1aa1805da0d9d89408d8607fd439)
+        ;
+
+        
+    
+    
+            marker_25277bb0b4d099bfba8fa9d7f186b3a3.bindTooltip(
+                `<div>
+                     Montgomery
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_bc1d3914312f1799f8a83940b495a4e7 = L.marker(
+                [37.7844, -122.4079],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_25546311caba1bb9bd890b06f57ea88f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e04e80ef3c5fd2fb90342717da289b0 = $(`<div id="html_9e04e80ef3c5fd2fb90342717da289b0" style="width: 100.0%; height: 100.0%;">Powell</div>`)[0];
+                popup_25546311caba1bb9bd890b06f57ea88f.setContent(html_9e04e80ef3c5fd2fb90342717da289b0);
+            
+        
+
+        marker_bc1d3914312f1799f8a83940b495a4e7.bindPopup(popup_25546311caba1bb9bd890b06f57ea88f)
+        ;
+
+        
+    
+    
+            marker_bc1d3914312f1799f8a83940b495a4e7.bindTooltip(
+                `<div>
+                     Powell
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6b0072f5945bfe450de9cb1a8e52c42b = L.marker(
+                [37.7795, -122.4136],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_569873b6d2ec51d57a44baf8068a801d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca41fa8fc99cc57cccbf552570138b11 = $(`<div id="html_ca41fa8fc99cc57cccbf552570138b11" style="width: 100.0%; height: 100.0%;">Civic Center</div>`)[0];
+                popup_569873b6d2ec51d57a44baf8068a801d.setContent(html_ca41fa8fc99cc57cccbf552570138b11);
+            
+        
+
+        marker_6b0072f5945bfe450de9cb1a8e52c42b.bindPopup(popup_569873b6d2ec51d57a44baf8068a801d)
+        ;
+
+        
+    
+    
+            marker_6b0072f5945bfe450de9cb1a8e52c42b.bindTooltip(
+                `<div>
+                     Civic Center
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c5311d4a65e3684bc7ca0e4153447ce5 = L.marker(
+                [37.7651, -122.4196],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_d4f07ba36a243ef07b1e22dfb06333a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a8258cb516333cb18018c17b50ffd90 = $(`<div id="html_4a8258cb516333cb18018c17b50ffd90" style="width: 100.0%; height: 100.0%;">16th St Mission</div>`)[0];
+                popup_d4f07ba36a243ef07b1e22dfb06333a0.setContent(html_4a8258cb516333cb18018c17b50ffd90);
+            
+        
+
+        marker_c5311d4a65e3684bc7ca0e4153447ce5.bindPopup(popup_d4f07ba36a243ef07b1e22dfb06333a0)
+        ;
+
+        
+    
+    
+            marker_c5311d4a65e3684bc7ca0e4153447ce5.bindTooltip(
+                `<div>
+                     16th St Mission
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1ace5e578157b35be9a0fe41a5bd99ca = L.marker(
+                [37.7523, -122.4184],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_ff32dde0bc5a3600185a7128d4e89eaa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2d6832071b0c56430017f1efa345135 = $(`<div id="html_f2d6832071b0c56430017f1efa345135" style="width: 100.0%; height: 100.0%;">24th St Mission</div>`)[0];
+                popup_ff32dde0bc5a3600185a7128d4e89eaa.setContent(html_f2d6832071b0c56430017f1efa345135);
+            
+        
+
+        marker_1ace5e578157b35be9a0fe41a5bd99ca.bindPopup(popup_ff32dde0bc5a3600185a7128d4e89eaa)
+        ;
+
+        
+    
+    
+            marker_1ace5e578157b35be9a0fe41a5bd99ca.bindTooltip(
+                `<div>
+                     24th St Mission
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9901abc96d32095eb5677abc9d6f332b = L.marker(
+                [37.7331, -122.4338],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_8a3b1f6171dec3e006c8cf92826314c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_990ee2e0b486757bcd95e46708b7e65d = $(`<div id="html_990ee2e0b486757bcd95e46708b7e65d" style="width: 100.0%; height: 100.0%;">Glen Park</div>`)[0];
+                popup_8a3b1f6171dec3e006c8cf92826314c9.setContent(html_990ee2e0b486757bcd95e46708b7e65d);
+            
+        
+
+        marker_9901abc96d32095eb5677abc9d6f332b.bindPopup(popup_8a3b1f6171dec3e006c8cf92826314c9)
+        ;
+
+        
+    
+    
+            marker_9901abc96d32095eb5677abc9d6f332b.bindTooltip(
+                `<div>
+                     Glen Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ac9006a3e6919e1ff66b9dd581e24cac = L.marker(
+                [37.7216, -122.4475],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_63eda2f50853f3a0affd194ec412c090 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d12212de87fcfafa078a2661aea77e1 = $(`<div id="html_8d12212de87fcfafa078a2661aea77e1" style="width: 100.0%; height: 100.0%;">Balboa Park</div>`)[0];
+                popup_63eda2f50853f3a0affd194ec412c090.setContent(html_8d12212de87fcfafa078a2661aea77e1);
+            
+        
+
+        marker_ac9006a3e6919e1ff66b9dd581e24cac.bindPopup(popup_63eda2f50853f3a0affd194ec412c090)
+        ;
+
+        
+    
+    
+            marker_ac9006a3e6919e1ff66b9dd581e24cac.bindTooltip(
+                `<div>
+                     Balboa Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2c0d072e4648c2ffdb45565fd420e043 = L.marker(
+                [37.7061, -122.469],
+                {
+}
+            ).addTo(map_da1ac2681cf8cbab0bfe836e8bc1dfec);
+        
+    
+        var popup_b3a65e3279cb4b5776b64b72f0e42761 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91c3f12985d0f7b7506eb39e2ef8cfe8 = $(`<div id="html_91c3f12985d0f7b7506eb39e2ef8cfe8" style="width: 100.0%; height: 100.0%;">Daly City</div>`)[0];
+                popup_b3a65e3279cb4b5776b64b72f0e42761.setContent(html_91c3f12985d0f7b7506eb39e2ef8cfe8);
+            
+        
+
+        marker_2c0d072e4648c2ffdb45565fd420e043.bindPopup(popup_b3a65e3279cb4b5776b64b72f0e42761)
+        ;
+
+        
+    
+    
+            marker_2c0d072e4648c2ffdb45565fd420e043.bindTooltip(
+                `<div>
+                     Daly City
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
