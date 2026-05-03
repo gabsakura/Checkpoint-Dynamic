@@ -12,37 +12,93 @@ class RedeMetro(TypedDict):
 
 """as estruturas de dados de cada metro[Estações visinha, tempo +/- de viagem de cada estação](se houver outra estação tera mais outra tupla)"""
 PEQUIM_GRAFO: dict[str, list[tuple[str, float]]] = {
-    "Sihui East": [("Sihui", 3.0)],
-    "Sihui": [("Sihui East", 3.0), ("Guomao", 3.0)],
-    "Guomao": [
-        ("Sihui", 3.0),
-        ("Jianguomen", 3.0),
-        ("Jintaio", 2.5),
-    ],
-    "Jintaio": [("Guomao", 2.5), ("Tuanjiehu", 2.5)],
-    "Tuanjiehu": [("Jintaio", 2.5)],
-    "Jianguomen": [("Guomao", 3.0), ("Dongdan", 2.5)],
-    "Dongdan": [("Jianguomen", 2.5), ("Xidan", 2.5)],
-    "Xidan": [("Dongdan", 2.5), ("Fuxingmen", 2.5), ("Ping'anli", 2.5)],
-    "Fuxingmen": [("Xidan", 2.5), ("Chegongzhuang", 2.5)],
-    "Chegongzhuang": [("Fuxingmen", 2.5), ("Xizhimen", 2.5)],
-    "Ping'anli": [("Xidan", 2.5), ("Xizhimen", 2.5)],
-    "Xizhimen": [("Chegongzhuang", 2.5), ("Ping'anli", 2.5)],
+    # --- LINHA 1 (Eixo Leste-Oeste) ---
+    "Sihui East": [("Sihui", 2.0)],
+    "Sihui": [("Sihui East", 2.0), ("Dawanglu", 2.5)],
+    "Dawanglu": [("Sihui", 2.5), ("Guomao", 2.0)],
+    "Guomao": [("Dawanglu", 2.0), ("Yong'anli", 2.0), ("Jintaixizhao", 2.0)], # Int L10
+    "Yong'anli": [("Guomao", 2.0), ("Jianguomen", 2.5)],
+    "Jianguomen": [("Yong'anli", 2.5), ("Dongdan", 2.0), ("Chaoyangmen", 2.5), ("Beijing Railway Station", 2.0)], # Int L2
+    "Dongdan": [("Jianguomen", 2.0), ("Wangfujing", 1.5)],
+    "Wangfujing": [("Dongdan", 1.5), ("Tian'anmen East", 2.0)],
+    "Tian'anmen East": [("Wangfujing", 2.0), ("Tian'anmen West", 1.5)],
+    "Tian'anmen West": [("Tian'anmen East", 1.5), ("Xidan", 2.0)],
+    "Xidan": [("Tian'anmen West", 2.0), ("Fuxingmen", 2.0), ("Lingjing Hutong", 1.5), ("Xuanwumen", 2.0)], # Int L4
+    "Fuxingmen": [("Xidan", 2.0), ("Fuchengmen", 2.5), ("Changchunjie", 2.0)], # Int L2
+
+    # --- LINHA 2 (Arco Norte - Sentido Anti-Horário de Jianguomen a Xizhimen) ---
+    "Chaoyangmen": [("Jianguomen", 2.5), ("Dongzhimen", 3.0)],
+    "Dongzhimen": [("Chaoyangmen", 3.0), ("Yonghegong", 2.5)],
+    "Yonghegong": [("Dongzhimen", 2.5), ("Guloudajie", 2.5)],
+    "Guloudajie": [("Yonghegong", 2.5), ("Jishuitan", 2.0)],
+    "Jishuitan": [("Guloudajie", 2.0), ("Xizhimen", 2.5)],
+    "Xizhimen": [("Jishuitan", 2.5), ("Chegongzhuang", 2.0), ("Xinjiekou", 1.5)], # Int L4
+    "Chegongzhuang": [("Xizhimen", 2.0), ("Fuchengmen", 2.0)],
+    "Fuchengmen": [("Chegongzhuang", 2.0), ("Fuxingmen", 2.5)],
+
+    # --- LINHA 2 (Arco Sul - Fechando o Loop entre Fuxingmen e Jianguomen) ---
+    "Changchunjie": [("Fuxingmen", 2.0), ("Xuanwumen", 2.0)],
+    "Xuanwumen": [("Changchunjie", 2.0), ("Qianmen", 2.5), ("Xidan", 2.0)], # Int L4
+    "Qianmen": [("Xuanwumen", 2.5), ("Chongwenmen", 2.0)],
+    "Chongwenmen": [("Qianmen", 2.0), ("Beijing Railway Station", 2.5)],
+    "Beijing Railway Station": [("Chongwenmen", 2.5), ("Jianguomen", 2.0)],
+
+    # --- LINHA 4 (Eixo Norte-Sul via Xidan/Xizhimen) ---
+    "Xinjiekou": [("Xizhimen", 1.5), ("Ping'anli", 2.0)],
+    "Ping'anli": [("Xinjiekou", 2.0), ("Xisi", 1.5)],
+    "Xisi": [("Ping'anli", 1.5), ("Lingjing Hutong", 1.5)],
+    "Lingjing Hutong": [("Xisi", 1.5), ("Xidan", 1.5)],
+
+    # --- LINHA 10 (Eixo Leste a partir de Guomao) ---
+    "Jintaixizhao": [("Guomao", 2.0), ("Hujialou", 1.5)],
+    "Hujialou": [("Jintaixizhao", 1.5), ("Tuanjiehu", 2.0)],
+    "Tuanjiehu": [("Hujialou", 2.0), ("Agricultural Exhibition Center", 2.0)],
+    "Agricultural Exhibition Center": [("Tuanjiehu", 2.0)],
 }
 
 PEQUIM_COORDS: dict[str, tuple[float, float]] = {
+    # Linha 1
     "Sihui East": (39.9085, 116.5155),
     "Sihui": (39.9077, 116.4965),
+    "Dawanglu": (39.9080, 116.4770),
     "Guomao": (39.9090, 116.4600),
-    "Jintaio": (39.9155, 116.4560),
-    "Tuanjiehu": (39.9335, 116.4505),
+    "Yong'anli": (39.9088, 116.4500),
     "Jianguomen": (39.9087, 116.4355),
-    "Dongdan": (39.9140, 116.4175),
-    "Xidan": (39.9105, 116.3740),
+    "Dongdan": (39.9085, 116.4175),
+    "Wangfujing": (39.9083, 116.4100),
+    "Tian'anmen East": (39.9082, 116.3980),
+    "Tian'anmen West": (39.9080, 116.3900),
+    "Xidan": (39.9078, 116.3740),
     "Fuxingmen": (39.9075, 116.3520),
-    "Chegongzhuang": (39.9325, 116.3540),
-    "Ping'anli": (39.9332, 116.3720),
+    
+    # Linha 2 (Norte)
+    "Chaoyangmen": (39.9240, 116.4330),
+    "Dongzhimen": (39.9410, 116.4330),
+    "Yonghegong": (39.9480, 116.4170),
+    "Guloudajie": (39.9480, 116.3940),
+    "Jishuitan": (39.9480, 116.3720),
     "Xizhimen": (39.9402, 116.3555),
+    "Chegongzhuang": (39.9325, 116.3540),
+    "Fuchengmen": (39.9230, 116.3530),
+
+    # Linha 2 (Sul)
+    "Changchunjie": (39.8990, 116.3520),
+    "Xuanwumen": (39.8990, 116.3740),
+    "Qianmen": (39.8990, 116.3980),
+    "Chongwenmen": (39.8990, 116.4170),
+    "Beijing Railway Station": (39.9030, 116.4250),
+
+    # Linha 4
+    "Xinjiekou": (39.9400, 116.3650),
+    "Ping'anli": (39.9332, 116.3720),
+    "Xisi": (39.9240, 116.3730),
+    "Lingjing Hutong": (39.9160, 116.3735),
+
+    # Linha 10
+    "Jintaixizhao": (39.9155, 116.4600),
+    "Hujialou": (39.9230, 116.4605),
+    "Tuanjiehu": (39.9335, 116.4610),
+    "Agricultural Exhibition Center": (39.9420, 116.4615),
 }
 
 BART_GRAFO: dict[str, list[tuple[str, float]]] = {
