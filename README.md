@@ -18,7 +18,7 @@ O objetivo é explorar conceitos como:
 ## 🧱 2. Estrutura do Projeto
 
 ```
-Checkpoint_2_em_grupo/
+Checkpoint-Dynamic/
 ├── src/
 │   ├── graphs/                     # Definição dos grafos
 │   │   └── redes.py
